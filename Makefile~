@@ -28,8 +28,7 @@ httpd: $(OBJS) httpd.c
 test-%: $(OBJS) tests/test-%.c
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-doc: 
-	@doxygen
+doc: @doxygen
 
 $(OUT)/%.o: %.c
 	$(CC) $(CFLAGS) -c -o $@ -MMD -MF $@.d $<
